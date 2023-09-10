@@ -7,7 +7,7 @@ const { DB_HOST, DB_USER, DB_PASSWORD, DATABASE_URL } = process.env;
 
 // const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, { logging: false });
 const sequelize = new Sequelize(DATABASE_URL, {
-   logging: false, dialect: "postgres", native: false,
+   logging: false, dialect: "postgres", native: false, ssl: true
 });
 
 CountryModel(sequelize);
