@@ -3,9 +3,9 @@ const CountryModel = require('./models/Country');
 const ActivityModel = require('./models/Activity');
 
 require('dotenv').config();
-const { PGHOST, DB_USER, PGPASSWORD, PGPORT, PGDATABASE } = process.env;
+const { PGHOST, DB_USER, PGPASSWORD, PGPORT, PGDATABASE, DATABASE_URL } = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}`, { logging: false });
+const sequelize = new Sequelize(`${DATABASE_URL}`, { logging: false });
 
 CountryModel(sequelize);
 ActivityModel(sequelize);
