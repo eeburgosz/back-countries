@@ -15,7 +15,7 @@ const pool = new pg.Pool({
 
 app.use(morgan("dev"));
 app.use(express.json());
-app.get('/', async (req, res) => {
+app.get('/hola', async (req, res) => {
    try {
       const result = await pool.query('SELECT NOW()');
       res.json(result.rows[0]);
