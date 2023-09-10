@@ -7,7 +7,7 @@ require('dotenv').config();
 const { DATABASE_URL } = process.env;
 const app = express();
 
-const pool = new pg.Pool({
+/* const pool =  */new pg.Pool({
    connectionString: `${DATABASE_URL}`,
    ssl: true,
 });
