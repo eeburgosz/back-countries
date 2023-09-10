@@ -7,7 +7,7 @@ const pg = require('pg');
 require('dotenv').config();
 const { DB_HOST, DB_USER, DB_PASSWORD, DATABASE_URL } = process.env;
 
-const sequelize = /* process.env.NODE_ENV === 'production' ? new Sequelize(DATABASE_URL,
+const sequelize = process.env.NODE_ENV === 'production' ? new Sequelize(DATABASE_URL,
    {
       logging: false,
       dialect: "postgres",
@@ -25,7 +25,7 @@ const sequelize = /* process.env.NODE_ENV === 'production' ? new Sequelize(DATAB
          },
          keepAlive: true
       }
-   }) : */
+   }) :
    new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, { logging: false });
 
 new pg.Pool({
