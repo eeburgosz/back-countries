@@ -9,7 +9,7 @@ const app = express();
 
 /* const pool =  */new pg.Pool({
    connectionString: `${DATABASE_URL}`,
-   ssl: true,
+   // ssl: true,
 });
 
 
