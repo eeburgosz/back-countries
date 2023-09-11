@@ -13,11 +13,6 @@ const sequelize = process.env.NODE_ENV === 'production' ? new Sequelize(DATABASE
       dialect: "postgres",
       native: false,
       ssl: true,
-      // pool: {
-      //    max: 3,
-      //    min: 1,
-      //    idle: 10000
-      // },
       dialectOptions: {
          ssl: {
             require: true,

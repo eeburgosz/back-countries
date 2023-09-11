@@ -2,7 +2,7 @@ const { Op } = require("sequelize");
 const { Country, Activity } = require("../db");
 const { infoCountriesApi } = require("../utils/api");
 
-//! Carga de los datos de la API en la DB. Podría pribar hacerlo desde una ruta /------
+//! Carga de los datos de la API en la DB------
 (async () => {
    const countries = await infoCountriesApi();
    const db = await Country.findAll();
