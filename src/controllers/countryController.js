@@ -5,7 +5,8 @@ const { infoCountriesApi } = require("../utils/api");
 //! Carga de los datos de la API en la DB. Podría pribar hacerlo desde una ruta /------
 (async () => {
    const countries = await infoCountriesApi();
-   return await Country.bulkCreate(countries);
+   const db = await Country.findAll();
+   !db ? await Country.bulkCreate(countries) : null;
 })();
 //!--------------------------------------------
 const getAllCountries = async () => {
