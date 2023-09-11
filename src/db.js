@@ -23,10 +23,6 @@ const sequelize = process.env.NODE_ENV === 'production' ? new Sequelize(DATABASE
    }) :
    new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, { logging: false });
 
-// new pg.Pool({
-//    connectionString: DATABASE_URL, ssl: true
-// });
-
 CountryModel(sequelize);
 ActivityModel(sequelize);
 
