@@ -12,7 +12,7 @@ const { infoCountriesApi } = require("../utils/api");
 const getAllCountries = async () => {
    return await Country.findAll({
       attributes: {
-         exclude: ['capital', 'subregion', 'area', 'population']
+         exclude: ['capital', 'subregion', 'area']
       },
       include: [{ model: Activity }]
    });
