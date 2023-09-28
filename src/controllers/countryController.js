@@ -5,8 +5,10 @@ const { infoCountriesApi } = require("../utils/api");
 //! Carga de los datos de la API en la DB------
 (async () => {
    const countries = await infoCountriesApi();
-   const db = await Country.findAll();
-   !db ? await Country.bulkCreate(countries) : null;
+   // const db = await Country.findAll();
+   // !db ? await Country.bulkCreate(countries) : null;
+   const db = await Country.bulkCreate(countries);
+   // console.log(db.length);
 })();
 //!--------------------------------------------
 const getAllCountries = async () => {

@@ -7,6 +7,6 @@ const { PORT } = process.env;
 const port = PORT || 3001;
 
 app.listen(port, () => {
-   sequelize.sync({ alter: true });
+   sequelize.sync({ force: true });
    console.log(`Listening on port ${port}`);
 });
