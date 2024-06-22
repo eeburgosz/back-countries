@@ -23,10 +23,7 @@ const sequelize =
 		  })
 		: new Sequelize(
 				`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`,
-				{
-					logging: false,
-					// schema: "countries_schema"
-				}
+				{ logging: false, schema: "countries_schema" }
 		  );
 
 CountryModel(sequelize);
@@ -39,7 +36,7 @@ const CountryActivity = sequelize.define(
 	{},
 	{
 		timestamps: false,
-		// schema: "countries_schema"
+		schema: "countries_schema",
 	}
 );
 

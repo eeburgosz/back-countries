@@ -29,7 +29,7 @@ module.exports = (sequelize) => {
 		},
 		{
 			timestamps: false,
-			// schema: "countries_schema",
+			schema: "countries_schema",
 		}
 	);
 };
